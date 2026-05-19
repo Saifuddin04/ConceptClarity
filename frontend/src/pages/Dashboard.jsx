@@ -49,7 +49,7 @@ function Dashboard() {
     useEffect(() => {
         const fetchHistory = async () => {
             try {
-                const res = await fetch('${API_URL}/api/history', {
+                const res = await fetch(`${API_URL}/api/history`, {
                     headers: {
                         'Authorization': `Bearer ${localStorage.getItem('token')}`
                     }
@@ -82,7 +82,7 @@ function Dashboard() {
         setLoading(true)
 
         try {
-            const res = await fetch('${API_URL}/api/generate', {
+            const res = await fetch(`${API_URL}/api/generate`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -102,7 +102,7 @@ function Dashboard() {
                 { role: 'ai', text: data.response }
             ])
 
-            const updatedHistory = await fetch('${API_URL}/api/history', {
+            const updatedHistory = await fetch(`${API_URL}/api/history`, {
                 headers: {
                     'Authorization': `Bearer ${localStorage.getItem('token')}`
                 }
@@ -118,7 +118,7 @@ function Dashboard() {
             ])
 
             // 🔥 refresh history immediately
-            const res2 = await fetch('${API_URL}/api/history', {
+            const res2 = await fetch(`${API_URL}/api/history`, {
                 headers: {
                     'Authorization': `Bearer ${localStorage.getItem('token')}`
                 }
