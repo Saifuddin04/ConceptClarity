@@ -1,0 +1,420 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/* ---------------- APP ---------------- */
+.app {
+    display: flex;
+    min-height: 100vh;
+    background: linear-gradient(135deg, #1e3c72, #2a5298, #6a11cb);
+}
+
+/* ---------------- SIDEBAR ---------------- */
+.sidebar {
+    width: 260px;
+    background: rgba(0,0,0,0.25);
+    color: white;
+    padding: 15px;
+    overflow-y: auto;
+}
+
+.brand-small {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.logo-small {
+    width: 30px;
+    height: 30px;
+}
+
+.sidebar-title {
+    font-size: 14px;
+    opacity: 0.7;
+    margin-bottom: 10px;
+}
+
+.history-list {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.history-item {
+    padding: 10px;
+    background: rgba(255,255,255,0.08);
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.history-item:hover {
+    background: rgba(255,255,255,0.2);
+}
+
+.no-history {
+    font-size: 12px;
+    opacity: 0.6;
+}
+
+/* ---------------- MAIN ---------------- */
+.main {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+}
+
+/* ---------------- TOP BAR ---------------- */
+.top-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.logo {
+    width: 40px;
+    height: 40px;
+}
+
+.subtitle {
+    font-size: 12px;
+    opacity: 0.7;
+}
+
+.logout-btn {
+    padding: 6px 12px;
+    font-size: 13px;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+    background: rgba(255,255,255,0.2);
+    color: white;
+}
+
+.logout-btn:hover {
+    background: rgba(255,255,255,0.35);
+}
+
+/* ---------------- DROPDOWNS ---------------- */
+.dropdowns {
+    display: flex;
+    gap: 15px;
+    margin: 10px 0;
+}
+
+select {
+    flex: 1;
+    padding: 10px;
+    border-radius: 8px;
+    border: none;
+}
+
+/* ---------------- CHAT ---------------- */
+.chat-wrapper {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    min-height: 0;   /* 🔥 prevents double scroll bug */
+}
+
+.chat-box {
+    flex: 1;
+    overflow-y: auto;
+    padding: 12px;
+    background: rgba(255,255,255,0.08);
+    border-radius: 12px;
+
+    /* IMPORTANT FOR CHAT UX */
+    max-height: calc(100vh - 220px);
+    scroll-behavior: smooth;
+}
+
+.user-msg {
+    text-align: right;
+    margin: 6px 0;
+    padding: 10px;
+    background: rgba(255,255,255,0.2);
+    border-radius: 10px;
+}
+
+.ai-msg {
+    text-align: left;
+    margin: 6px 0;
+    padding: 10px;
+    background: rgba(0, 0, 0, 0.25);
+    border-radius: 10px;
+}
+
+/* ---------------- INPUT ---------------- */
+.input-bar {
+    display: flex;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.input-bar input {
+    flex: 1;
+    padding: 12px;
+    border-radius: 8px;
+    border: none;
+    outline: none;
+}
+
+.input-bar button {
+    padding: 12px 16px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    background: white;
+    color: #2a5298;
+    font-weight: bold;
+}
+
+/* =========================================================
+   AUTH PAGES (LOGIN + REGISTER) STYLING
+   Matches Dashboard Glass Theme
+   ========================================================= */
+
+/* reuse same background as dashboard */
+.auth-page {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: linear-gradient(135deg, #1e3c72, #2a5298, #6a11cb);
+    padding: 20px;
+}
+
+/* glass card upgrade for auth pages */
+.auth-page .glass-card {
+    width: 100%;
+    max-width: 420px;
+    padding: 30px;
+    border-radius: 20px;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(15px);
+    box-shadow: 0 8px 32px rgba(0,0,0,0.25);
+    color: white;
+    text-align: center;
+}
+
+/* heading consistency */
+.auth-page h1 {
+    font-size: 32px;
+    margin-bottom: 20px;
+}
+
+/* input styling (override login/register only) */
+.auth-page input {
+    width: 100%;
+    padding: 12px;
+    margin: 10px 0;
+    border-radius: 10px;
+    border: none;
+    outline: none;
+    font-size: 15px;
+}
+
+/* button styling */
+.auth-page button {
+    width: 100%;
+    padding: 12px;
+    margin-top: 10px;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+    background: white;
+    color: #2a5298;
+    transition: 0.2s;
+}
+
+.auth-page button:hover {
+    transform: scale(1.03);
+}
+
+/* switch links */
+.switch-text {
+    margin-top: 15px;
+    font-size: 14px;
+    opacity: 0.9;
+}
+
+.switch-text a {
+    color: white;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.switch-text a:hover {
+    text-decoration: underline;
+}
+
+/* =========================================================
+   FIX: CHAT TEXT COLOR + MARKDOWN FORMATTING
+   ========================================================= */
+
+/* force all chat text to be white */
+.user-msg,
+.ai-msg {
+    color: white;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+}
+
+/* markdown paragraph spacing */
+.ai-msg p,
+.user-msg p {
+    margin: 5px 0;
+    line-height: 1.5;
+    color: white;
+}
+
+/* bullet points fix */
+.ai-msg ul,
+.ai-msg ol {
+    padding-left: 20px;
+    margin: 8px 0;
+    color: white;
+}
+
+.ai-msg li {
+    margin-bottom: 5px;
+    color: white;
+}
+
+/* headings inside AI response */
+.ai-msg h1,
+.ai-msg h2,
+.ai-msg h3 {
+    color: white;
+    margin: 8px 0;
+}
+
+/* code blocks (if AI generates code) */
+.ai-msg pre {
+    background: rgba(0,0,0,0.4);
+    padding: 10px;
+    border-radius: 8px;
+    overflow-x: auto;
+}
+
+.ai-msg code {
+    color: #ffffff;
+}
+
+.message-content {
+    width: 100%;
+    overflow-wrap: break-word;
+    word-break: break-word;
+}
+
+/* =========================================================
+   FIX: TOP BAR TITLE + SUBTITLE COLOR
+   ========================================================= */
+
+.brand h1 {
+    color: white;
+}
+
+.brand .subtitle {
+    color: white;
+    opacity: 0.85; /* keeps slight soft look but still white */
+}
+
+.new-chat-btn {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 12px;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+
+    background: rgba(255, 255, 255, 0.15);
+    color: white;
+    font-weight: bold;
+
+    transition: 0.2s;
+}
+
+.new-chat-btn:hover {
+    background: rgba(255, 255, 255, 0.25);
+    transform: scale(1.02);
+}
+
+.scroll-bottom-btn {
+    position: absolute;
+    right: 20px;
+    bottom: 90px;
+
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+
+    border: none;
+    cursor: pointer;
+
+    background: white;
+    color: #2a5298;
+    font-size: 18px;
+    font-weight: bold;
+
+    box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+    transition: 0.2s;
+}
+
+.scroll-bottom-btn:hover {
+    transform: scale(1.1);
+}
+
+html, body {
+    height: 100%;
+    overflow: hidden;   /* 🔥 disables page scroll */
+}
+
+/* ================= AUTH BRAND HEADER ================= */
+
+.auth-brand {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 20px;
+    color: white;
+}
+
+.auth-logo {
+    width: 60px;
+    height: 60px;
+    object-fit: contain;
+    margin-bottom: 10px;
+}
+
+.auth-brand h1 {
+    font-size: 28px;
+    margin: 0;
+    color: white;
+}
+
+.auth-subtitle {
+    font-size: 13px;
+    opacity: 0.8;
+    margin-top: 4px;
+    color: white;
+}
