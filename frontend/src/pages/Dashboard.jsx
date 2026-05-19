@@ -263,6 +263,12 @@ function Dashboard() {
 
                     </div>
 
+
+                </div>
+
+                {/* 👇 ADD YOUR FOOTER HERE 👇 */}
+                <div className="developer-footer">
+                    <p>Developed by Saifuddin Shariff</p>
                 </div>
 
             </div>
